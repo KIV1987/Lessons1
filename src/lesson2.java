@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 public class lesson2 {
 
     public static void main(String[] args) {
-    String inputText = "<client>(Какие то данные)<data>79991113344;test@yandex.ru;Ivanov Ivan Ivanovich</data></client>",outPutString ="";
+    String inputText = "<client>(Какие то данные)<data>79991113344;test@yandex.ru;Иванов Иван Иванович</data></client>",outPutString ="";
     System.out.println(inputText);
         Pattern pattern = Pattern.compile(";");
         String[] strings = pattern.split(inputText.substring(inputText.indexOf("<data>") + 6, inputText.indexOf("</data>")));
