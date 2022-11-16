@@ -26,8 +26,6 @@ public class lesson2 {
             String[] FIO = string.split(" ");
             outPutString += FIO[0].substring(0,1)+FIO[0].substring(1,FIO[0].length()-1).replaceAll(".", "*") + FIO[0].substring(FIO[0].length()-1)  + " "+
                     FIO[1] +" "+ FIO[2].substring(0,1)+".;";
-         //      outPutString += FIO[0].replaceAll("\\B.", "*") + " "+
-         //            FIO[1] +" "+ FIO[2].substring(0,1)+".;";
         }
         }
         outPutString = outPutString.substring(0,outPutString.length()-1) + inputText.substring(inputText.indexOf("</data>"));
