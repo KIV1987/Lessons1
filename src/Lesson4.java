@@ -1,11 +1,10 @@
 
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 import java.util.regex.Pattern;
 
 public class Lesson4 {
-    public static Set finderCar(String regex, Map<Integer, Map<String, String[]>> data) {
+    public static HashSet finderCar(String regex, Map<Integer, Map<String, String[]>> data) {
         HashSet<String> setCars = new HashSet<>();
         for (Map.Entry<Integer, Map<String, String[]>> region:data.entrySet()        ) {
             for (Map.Entry<String, String[]> arrayNumbers : region.getValue().entrySet()) {
