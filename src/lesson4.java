@@ -1,11 +1,11 @@
 
 import java.util.HashSet;
-        import java.util.Map;
-        import java.util.Set;
-        import java.util.regex.Pattern;
+import java.util.Map;
+import java.util.Set;
+import java.util.regex.Pattern;
 
 public class lesson4 {
-    public static Set FinderCar(String regex, Map<Integer, Map<String, String[]>> data) {
+    public static Set finderCar(String regex, Map<Integer, Map<String, String[]>> data) {
         HashSet<String> setCars = new HashSet<>();
         for (Map.Entry<Integer, Map<String, String[]>> region:data.entrySet()        ) {
             for (Map.Entry<String, String[]> arrayNumbers : region.getValue().entrySet()) {
@@ -24,7 +24,7 @@ public class lesson4 {
         final String SECOND = "АВ";
         String regex = "("+FIRST+")\\w+("+SECOND+")\\w+";
         Map<Integer, Map<String, String[]>> data = GeneratorExpertHomework.getData();
-        FinderCar(regex,data).stream().forEach(System.out::println);
-        System.out.println(FinderCar(regex,data).size());
+        finderCar(regex,data).stream().forEach(System.out::println);
+        System.out.println(finderCar(regex,data).size());
     }
 }
