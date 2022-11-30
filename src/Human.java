@@ -3,55 +3,61 @@
 
 public class Human {
     private String name;
-    private int age,weight;
+    private int age, weight;
 
-    private Human(HumanBuilder humanBuilder) {
-        name = humanBuilder.name;
-        age = humanBuilder.age;
-        weight = humanBuilder.weight;
-
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void info(){
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    private Human() {
+    }
+
+    public void info() {
         System.out.println(name + " - возраст " + age + ", вес " + weight);
     }
 
-    public static HumanBuilder builder(){
+    public static HumanBuilder builder() {
         return new HumanBuilder();
     }
 
-    public static class HumanBuilder{
-        private String name;
-        private int age,weight;
+    public static class HumanBuilder {
         private Human human;
 
         public HumanBuilder name(String name) {
-            this.name = name;
+            human.setName(name);
             return this;
         }
 
         public HumanBuilder age(int age) {
-            this.age = age;
+            human.setAge(age);
             return this;
         }
 
         public HumanBuilder weight(int weight) {
-            this.weight = weight;
+            human.setWeight(weight);
             return this;
         }
 
         public HumanBuilder() {
+            human = new Human();
         }
 
         public Human build() {
-            return new Human(this);
+            return human;
         }
     }
-
 
     public static void main(String[] args) {
-        Human human = Human.builder().name("Петр").age(25).weight(80).build();
+        Human human = Human.builder().name("Alex").age(25).weight(77).build();
         human.info();
-        }
     }
+}
 
