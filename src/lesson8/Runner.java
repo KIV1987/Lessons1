@@ -2,8 +2,7 @@ package lesson8;
 
 public class Runner {
     public static void main(String[] args) {
-        Car volvo = new Car();
-        volvo.setCost(1000);
+        Car volvo = new Car(1000);
         CarShop carshop = new CarShop(volvo);
         try {
             carshop.SellCar();

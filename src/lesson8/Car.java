@@ -5,10 +5,9 @@ public class Car {
         return cost;
     }
 
-    public void setCost(int cost) {
-        this.cost = cost;
-    }
-
     int cost;
 
+    public Car(int cost) {
+        this.cost = cost;
+    }
 }
