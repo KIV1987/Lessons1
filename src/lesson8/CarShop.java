@@ -1,7 +1,9 @@
 package lesson8;
 
 public class CarShop {
+
     private Car car;
+
     public CarShop(Car car){
         this.car = car;
     }
