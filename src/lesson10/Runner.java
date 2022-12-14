@@ -12,7 +12,9 @@ public class Runner {
     private static HashMap<String,Double> shops = new HashMap<String,Double>();
 
     public static void main(String[] args) {
+
         String PATH = "D:\\lesson10\\reports";
+
         try {
             DataGenerator.createReports(PATH);
             //первый отчет
@@ -26,7 +28,7 @@ public class Runner {
                 System.out.println("Расходы " + entry.getKey() + " за весь период: " + String.format("%.2f",entry.getValue()));
             }
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Каталог не найден");
         }
     }
 
@@ -52,7 +54,7 @@ public class Runner {
             System.out.println(String.format(fieldsFileName[1] + "."+fieldsFileName[2].substring(0,4)+": "+"%.2f",profit));
             bufferedReader.close();
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Файлы не найдены");
         }
     }
     private static void reportSecond(Path path) {
@@ -74,7 +76,7 @@ public class Runner {
             }
             bufferedReader.close();
          } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Файлы не найдены");
         }
     }
 }
